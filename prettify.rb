@@ -15,6 +15,22 @@ add_header_proc do
       }
     }
     prettyPrint();
+
+    if (document.body.addEventListener) {
+        document.body.addEventListener('AutoPagerize_DOMNodeInserted', function(e) {
+            var node = e.target;
+            var pre = node.getElementsByTagName("pre");
+
+            for (var i=0, len=pre.length; i<len; i++) {
+                pre[i].className = "prettyprint";
+            }
+
+            if (i > 0) {
+                prettyPrint();
+            }
+        }, 
+        false);
+    }
   }
   if(window.addEventListener){
     window.addEventListener('load',google_prettify,false);
