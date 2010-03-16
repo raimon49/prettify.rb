@@ -2,43 +2,52 @@
 
 add_header_proc do
   <<-HTML
-  <link href="prettify.css" type="text/css" rel="stylesheet" />
-  <script type="text/javascript" src="prettify.js"></script>
-  <script type="text/javascript"><!--
-  function google_prettify(){
-    var div=document.getElementsByTagName("div");
-    for(var i=0;i<div.length;i++){
-      if(div[i].className!="body") continue;
-      var pre=div[i].getElementsByTagName("pre");
-      for(var j=0;j<pre.length;j++){
-        pre[j].className="prettyprint";
-      }
-    }
-    prettyPrint();
+	<link href="prettify.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="prettify.js"></script>
+	<script type="text/javascript"><!--
+	(function() {
+	    var addEvent = function() {};
+	    if (document.addEventListener) {
+	        addEvent = function(node, type, handler) {
+	            node.addEventListener(type, handler, false);
+	        };
+	    }
+	    else if (document.attachEvent) {
+	        addEvent = function(node, type, handler) {
+	            node.attachEvent('on' + type, function(e) {
+	                handler.call(node, e || window.event);
+	            });
+	        };
+	    }
 
-    if (document.body.addEventListener) {
-        document.body.addEventListener('AutoPagerize_DOMNodeInserted', function(e) {
-            var node = e.target;
-            var pre = node.getElementsByTagName("pre");
+	    var highligntClass = 'prettyprint';
+	    addEvent(window, 'load', function() {
+	        var div = document.getElementsByTagName("div");
+	        for (var i=0, len=div.length; i<len; i++) {
+	            if(div[i].className !== "body") continue;
 
-            for (var i=0, len=pre.length; i<len; i++) {
-                pre[i].className = "prettyprint";
-            }
+	            var pre = div[i].getElementsByTagName("pre");
+	            for(var j=0, plen=pre.length; j<plen; j++) {
+	                pre[j].className = highligntClass;
+	            }
+	        }
 
-            if (i > 0) {
-                prettyPrint();
-            }
-        }, 
-        false);
-    }
-  }
-  if(window.addEventListener){
-    window.addEventListener('load',google_prettify,false);
-  }else if(window.attachEvent){
-    window.attachEvent('onload',google_prettify);
-  }else{
-    window.onload=google_prettify;
-  }
-  // --></script>
-  HTML
+	        prettyPrint();
+
+	        addEvent(document.body, 'AutoPagerize_DOMNodeInserted', function(e) {
+	            var node = e.target;
+	            var pre = node.getElementsByTagName("pre");
+	
+	            for (var i=0, len=pre.length; i<len; i++) {
+	                pre[i].className = highligntClass;
+	            }
+	
+	            if (i > 0) {
+	                prettyPrint();
+	            }
+	        });
+	    });
+	})();
+	// --></script>
+	HTML
 end
