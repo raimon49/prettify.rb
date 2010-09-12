@@ -34,7 +34,7 @@ add_header_proc do
 
 	        prettyPrint();
 
-            var onNodeInserted = function(e) {
+	        var onNodeInserted = function(e) {
 	            var node = e.target;
 	            var pre = node.getElementsByTagName("pre");
 	
@@ -45,7 +45,7 @@ add_header_proc do
 	            if (i > 0) {
 	                prettyPrint();
 	            }
-            };
+	        };
 
 	        addEvent(document.body, 'AutoPagerize_DOMNodeInserted', onNodeInserted);
 	        addEvent(document.body, 'AutoPatchWork.DOMNodeInserted', onNodeInserted);
