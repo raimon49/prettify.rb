@@ -24,10 +24,16 @@ add_header_proc do
 	    addEvent(window, 'load', function() {
 	        var div = document.getElementsByTagName("div");
 	        for (var i=0, len=div.length; i<len; i++) {
-	            if(div[i].className !== "body") continue;
+	            if(div[i].className !== "body") {
+	                continue;
+	            }
 
 	            var pre = div[i].getElementsByTagName("pre");
 	            for(var j=0, plen=pre.length; j<plen; j++) {
+	                if (pre[j].parentNode.className.indexOf("gist-highlight") !== -1) {
+	                    continue;
+	                }
+
 	                pre[j].className = highligntClass;
 	            }
 	        }
@@ -37,11 +43,15 @@ add_header_proc do
 	        var onNodeInserted = function(e) {
 	            var node = e.target;
 	            var pre = node.getElementsByTagName("pre");
-	
+
 	            for (var i=0, len=pre.length; i<len; i++) {
+	                if (pre[j].parentNode.className.indexOf("gist-highlight") !== -1) {
+	                    continue;
+	                }
+
 	                pre[i].className = highligntClass;
 	            }
-	
+
 	            if (i > 0) {
 	                prettyPrint();
 	            }
