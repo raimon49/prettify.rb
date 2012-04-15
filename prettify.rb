@@ -2,8 +2,8 @@
 
 add_header_proc do
   <<-HTML
-	<link href="prettify.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="prettify.js"></script>
+	<link href="http://google-code-prettify.googlecode.com/svn/trunk/styles/sunburst.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
 	<script type="text/javascript"><!--
 	(function() {
 	    var addEvent = function() {};
