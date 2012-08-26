@@ -16,7 +16,7 @@ prettify.rb
 * rettify.cssファイルとprettify.jsファイルのアップロード不要
 * [Sunburstテーマ](http://google-code-prettify.googlecode.com/svn/trunk/styles/index.html)を利用
 * グローバル名前空間を使わないように変更
-* Gistで埋め込まれたページでスタイルがぶつからないよう変更
+* Gistが埋め込まれた本文内で構文ハイライト用のスタイルがぶつからないよう変更
 * AutoPagerizeとAutoPatchWorkで次のページが書き足された時のイベントを補足して構文ハイライト
 
 [tdiary-contribにもprettify.rbが存在します](https://raw.github.com/tdiary/tdiary-contrib/master/plugin/prettify.rb)が別物です。後から知りました。
