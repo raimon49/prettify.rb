@@ -45,7 +45,7 @@ add_header_proc do
 	            var pre = node.getElementsByTagName("pre");
 
 	            for (var i=0, len=pre.length; i<len; i++) {
-	                if (pre[j].parentNode.className.indexOf("gist-highlight") !== -1) {
+	                if (pre[i].parentNode.className.indexOf("gist-highlight") !== -1) {
 	                    continue;
 	                }
 
