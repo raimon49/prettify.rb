@@ -28,9 +28,11 @@ add_header_proc do
 	                continue;
 	            }
 
-	            var pre = div[i].getElementsByTagName("pre");
+	            var pre = div[i].getElementsByTagName("pre"),
+	                parentNode = null;
 	            for(var j=0, plen=pre.length; j<plen; j++) {
-	                if (pre[j].parentNode.className.indexOf("gist-highlight") !== -1) {
+	                parentNode = pre[j].parentNode;
+	                if ((parentNode && parentNode.className.indexOf("gist-highlight") !== -1) || (parentNode && parentNode.className.indexOf("line_data") !== -1)) {
 	                    continue;
 	                }
 
@@ -41,11 +43,13 @@ add_header_proc do
 	        prettyPrint();
 
 	        var onNodeInserted = function(e) {
-	            var node = e.target;
-	            var pre = node.getElementsByTagName("pre");
+	            var node = e.target,
+	                pre = node.getElementsByTagName("pre"),
+	                parentNode = null;
 
 	            for (var i=0, len=pre.length; i<len; i++) {
-	                if (pre[i].parentNode.className.indexOf("gist-highlight") !== -1) {
+                    parentNode = pre[i].parentNode;
+	                if ((parentNode && parentNode.className.indexOf("gist-highlight") !== -1) || (parentNode && parentNode.className.indexOf("line_data") !== -1)) {
 	                    continue;
 	                }
 
