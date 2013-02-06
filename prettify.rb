@@ -32,7 +32,7 @@ add_header_proc do
 	                parentNode = null;
 	            for(var j=0, plen=pre.length; j<plen; j++) {
 	                parentNode = pre[j].parentNode;
-	                if ((parentNode && parentNode.className.indexOf("gist-highlight") !== -1) || (parentNode && parentNode.className.indexOf("line_data") !== -1)) {
+	                if ((parentNode && parentNode.className.indexOf("gist-highlight") !== -1) || (parentNode && parentNode.className.indexOf("line-data") !== -1)) {
 	                    continue;
 	                }
 
@@ -49,7 +49,7 @@ add_header_proc do
 
 	            for (var i=0, len=pre.length; i<len; i++) {
                     parentNode = pre[i].parentNode;
-	                if ((parentNode && parentNode.className.indexOf("gist-highlight") !== -1) || (parentNode && parentNode.className.indexOf("line_data") !== -1)) {
+	                if ((parentNode && parentNode.className.indexOf("gist-highlight") !== -1) || (parentNode && parentNode.className.indexOf("line-data") !== -1)) {
 	                    continue;
 	                }
 
