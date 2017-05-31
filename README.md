@@ -1,7 +1,7 @@
 prettify.rb
 ===========
 
-[tDiary](http://www.tdiary.org/)のプラグインです。日記本文中のpre要素を全て[google-code-prettify](http://code.google.com/p/google-code-prettify/)でハイライトします。
+[tDiary](http://www.tdiary.org/)のプラグインです。日記本文中のpre要素を全て[google-code-prettify](https://github.com/google/code-prettify)でハイライトします。
 
 使い方
 ------
@@ -14,7 +14,7 @@ prettify.rb
 [elpeoさんのオリジナル実装](http://elpeo.jp/diary/20070329p03.html)から私が自分の好みに改変したものです。次のような差分があります。
 
 * rettify.cssファイルとprettify.jsファイルのアップロード不要
-* [Sunburstテーマ](http://google-code-prettify.googlecode.com/svn/trunk/styles/index.html)を利用
+* [Desertスキン](https://cdn.rawgit.com/google/code-prettify/master/styles/index.html#desert)を利用
 * グローバル名前空間を使わないように変更
 * Gistが埋め込まれた本文内で構文ハイライト用のスタイルがぶつからないよう変更
 * AutoPagerizeとAutoPatchWorkで次のページが書き足された時のイベントを補足して構文ハイライト

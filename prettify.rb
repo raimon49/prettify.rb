@@ -2,8 +2,7 @@
 
 add_header_proc do
   <<-HTML
-	<link href="http://google-code-prettify.googlecode.com/svn/trunk/styles/sunburst.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
 	<script type="text/javascript"><!--
 	(function() {
 	    var addEvent = function() {};
@@ -40,7 +39,7 @@ add_header_proc do
 	            }
 	        }
 
-	        prettyPrint();
+	        PR.prettyPrint();
 
 	        var onNodeInserted = function(e) {
 	            var node = e.target,
@@ -57,7 +56,7 @@ add_header_proc do
 	            }
 
 	            if (i > 0) {
-	                prettyPrint();
+	                PR.prettyPrint();
 	            }
 	        };
 
